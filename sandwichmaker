@@ -1,0 +1,27 @@
+#Simple vegan sandwich generator that never repeats ingredients
+
+#This script uses the random module that stores the result into a list, which in turn is processed to be printed in new lines
+
+#The ingredient lists below could also be fetched in MongoDB or any other database
+
+import random
+
+bread = ["white bread", "whole bread", "ciabatta", "sourdough bread"]
+
+sauce = ["avocado mayo", "yellow mustard", "dijon", "pesto", "vegan butter", "guacamole", "hummus"]
+
+cheese = ["mozzarella", "parmegian", "ermentaller", "gouda", "cheddar", "brie", "feta", "swiss cheese", "havarti", "chevre"]
+
+veggies = ["lettuce", "rucula", "tomato", "pickles", "grilled zucchini", "grilled mushrooms", "coleslaw", "purple onion", "roasted eggplant", "spinach", "alfafa"]
+
+seasoning = ["salt", "italian seasoning"]
+
+c = random.sample(cheese, k=1)
+b = random.sample(bread, k=1)
+s = random.sample(sauce, k=1)
+v = random.sample(veggies, k=3)
+z = random.sample(seasoning, k=1)
+
+list = (b + s + c + v + z)
+
+print(*list, sep = "\n")
